@@ -34,9 +34,9 @@ def run_test():
             print(f"VM {vm.name} skapad.")
         
         # 3. Skapa noden server1
-        node = db.query(Node).filter(Node.name == "server1", Node.vm_id == vm.id).first()
+        node = db.query(Node).filter(Node.name == "server3", Node.vm_id == vm.id).first()
         if not node:
-            node = Node(name="server1", vm_id=vm.id)
+            node = Node(name="server3", vm_id=vm.id)
             db.add(node)
             db.flush()
             print(f"Node {node.name} skapad.")
